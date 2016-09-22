@@ -4,9 +4,129 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bc1ae469479e60b729f87acbfc820ea7",
-    "content-hash": "1af01a9d4329bac53059aa3656eb3d60",
+    "hash": "6f9a4b95f546d7c5833e5ed31e15b6c3",
+    "content-hash": "d6d1952826558399b9a857f4bcb0d94b",
     "packages": [
+        {
+            "name": "dhii/collections-abstract",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/collections-abstract.git",
+                "reference": "0932f23365ff9461a140a841f48398d746b746d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/collections-abstract/zipball/0932f23365ff9461a140a841f48398d746b746d7",
+                "reference": "0932f23365ff9461a140a841f48398d746b746d7",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/collections-interface": "dev-master",
+                "dhii/stats-abstract": "dev-master"
+            },
+            "require-dev": {
+                "dhii/php-cs-fixer-config": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Collection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "A collections library",
+            "time": "2016-09-03 07:37:21"
+        },
+        {
+            "name": "dhii/collections-abstract-base",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/collections-abstract-base.git",
+                "reference": "bd52fe7bb1abcf9c01ae834d9de130e8536fabd3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/collections-abstract-base/zipball/bd52fe7bb1abcf9c01ae834d9de130e8536fabd3",
+                "reference": "bd52fe7bb1abcf9c01ae834d9de130e8536fabd3",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/collections-interface": "dev-master"
+            },
+            "require-dev": {
+                "dhii/php-cs-fixer-config": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Collection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Collection base classes that do not depend on other non-collection packages, on which there is a dependency of other collection packages that depend on this package. This is done to avoid circular reference in the collection toolchain",
+            "time": "2016-09-03 07:32:49"
+        },
+        {
+            "name": "dhii/collections-interface",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/collections-interface.git",
+                "reference": "d023f8e2150dc25ad3d514be5c70a184f63d6451"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/collections-interface/zipball/d023f8e2150dc25ad3d514be5c70a184f63d6451",
+                "reference": "d023f8e2150dc25ad3d514be5c70a184f63d6451",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 | ^7.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "dhii/php-cs-fixer-config": "dev-php-5.3",
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Collection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Interfaces for collections",
+            "time": "2016-09-03 14:02:49"
+        },
         {
             "name": "dhii/set-interface",
             "version": "dev-master",
@@ -38,6 +158,82 @@
             ],
             "description": "Interfaces for the Set library",
             "time": "2016-09-22 13:07:48"
+        },
+        {
+            "name": "dhii/stats-abstract",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/stats-abstract.git",
+                "reference": "c62a6d88451adab469873716631a7c6231df8a76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/stats-abstract/zipball/c62a6d88451adab469873716631a7c6231df8a76",
+                "reference": "c62a6d88451adab469873716631a7c6231df8a76",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/collections-abstract-base": "dev-master",
+                "dhii/stats-interface": "dev-master"
+            },
+            "require-dev": {
+                "dhii/php-cs-fixer-config": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Stats\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Abstract base for stats",
+            "time": "2016-09-03 07:35:16"
+        },
+        {
+            "name": "dhii/stats-interface",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dhii/stats-interface.git",
+                "reference": "afb71a15096e9857e78d6a85d317f3e7a1dc350f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dhii/stats-interface/zipball/afb71a15096e9857e78d6a85d317f3e7a1dc350f",
+                "reference": "afb71a15096e9857e78d6a85d317f3e7a1dc350f",
+                "shasum": ""
+            },
+            "require-dev": {
+                "dhii/php-cs-fixer-config": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dhii\\Stats\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dhii Team",
+                    "email": "development@dhii.co"
+                }
+            ],
+            "description": "Interfaces for stats",
+            "time": "2016-09-02 14:58:12"
         }
     ],
     "packages-dev": [
@@ -1614,6 +1810,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "dhii/set-interface": 20,
+        "dhii/collections-abstract": 20,
         "dhii/php-cs-fixer-config": 20
     },
     "prefer-stable": false,
