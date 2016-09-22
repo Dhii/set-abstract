@@ -12,7 +12,7 @@ use Dhii\Collection;
 abstract class AbstractSet extends Collection\AbstractSearchableCollection implements SetInterface
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      *
      * @since [*next-version*]
      *
@@ -25,6 +25,15 @@ abstract class AbstractSet extends Collection\AbstractSearchableCollection imple
         return $this;
     }
 
+    /**
+     * Low-level item adding.
+     *
+     * @since [*next-version*]
+     *
+     * @param mixed $value The value to add.
+     *
+     * @return AbstractSet This instance.
+     */
     protected function _add($value)
     {
         $this->_addItem($value);
@@ -33,7 +42,7 @@ abstract class AbstractSet extends Collection\AbstractSearchableCollection imple
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      *
      * @since [*next-version*]
      */
@@ -42,13 +51,22 @@ abstract class AbstractSet extends Collection\AbstractSearchableCollection imple
         return $this->_has($value);
     }
 
+    /**
+     * Low-level checking for item existance.
+     *
+     * @since [*next-version*]
+     *
+     * @param mixed $value The item to check for.
+     *
+     * @return bool
+     */
     protected function _has($value)
     {
         return $this->_hasItem($value);
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      *
      * @since [*next-version*]
      */
@@ -57,6 +75,13 @@ abstract class AbstractSet extends Collection\AbstractSearchableCollection imple
         return $this->_items();
     }
 
+    /**
+     * Low-level retrieval of all items.
+     *
+     * @since [*next-version*]
+     *
+     * @return mixed[]|\Traversable The list of items in the set.
+     */
     protected function _items()
     {
         return $this->getItems();
@@ -97,7 +122,6 @@ abstract class AbstractSet extends Collection\AbstractSearchableCollection imple
      * This guarantees that the set will not contain 2 instances of the same item.
      *
      * @since [*next-version*]
-     *
      * @see _getItemKey()
      *
      * @param mixed $item The item, for which to generate a unique key.
