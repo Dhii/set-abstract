@@ -1,0 +1,32 @@
+{
+    "name": "dhii/set-abstract",
+    "description": "An abstract implementation of set functionality",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dhii Team",
+            "email": "development@dhii.co"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "dhii/set-interface": "dev-master"
+    },
+    "require-dev": {
+        "dhii/php-cs-fixer-config": "dev-php-5.3",
+        "phpunit/phpunit": "^4.8",
+        "ptrofimov/xpmock": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dhii\\Set\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/Dhii/set-interface"
+        }
+    ]
+}
