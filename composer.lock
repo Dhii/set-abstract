@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "69be097d4e19f634ebffde5aff2189fd",
-    "content-hash": "56082408e680b4ccf2adfb9aaf3296fe",
+    "hash": "b7ca9ce79f1a264f9afff62f02194500",
+    "content-hash": "7005afd0cc52771ded88018596b0f2ec",
     "packages": [
         {
             "name": "dhii/collections-abstract",
@@ -126,38 +126,6 @@
             ],
             "description": "Interfaces for collections",
             "time": "2016-09-03 14:02:49"
-        },
-        {
-            "name": "dhii/set-interface",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Dhii/set-interface",
-                "reference": "613c0ba0ca96007dc46671c4163582f55f271849"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "dhii/php-cs-fixer-config": "dev-php-5.3",
-                "phpunit/phpunit": "^4.8",
-                "ptrofimov/xpmock": "^1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dhii\\Set\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dhii Team",
-                    "email": "development@dhii.co"
-                }
-            ],
-            "description": "Interfaces for the Set library",
-            "time": "2016-09-22 13:07:48"
         },
         {
             "name": "dhii/stats-abstract",
@@ -2191,7 +2159,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "dhii/set-interface": 20,
         "dhii/collections-abstract": 20,
         "dhii/php-cs-fixer-config": 20,
         "codeclimate/php-test-reporter": 20

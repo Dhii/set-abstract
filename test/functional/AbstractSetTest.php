@@ -33,7 +33,7 @@ class AbstractSetTest extends \Xpmock\TestCase
     {
         $subject = $this->createInstance();
 
-        $this->assertInstanceOf('Dhii\\Set\\SetInterface', $subject, 'Subject is not a valid set');
+        $this->assertInstanceOf('Dhii\\Set\\AbstractSet', $subject, 'Subject is not a valid set');
     }
 
     /**
@@ -44,21 +44,23 @@ class AbstractSetTest extends \Xpmock\TestCase
     public function testAddReportItems()
     {
         $subject = $this->createInstance();
+        $reflection = $this->reflect($subject);
 
-        $subject->add('apple');
-        $subject->add('banana');
-        $subject->add('orange');
+        $reflection->_add('apple');
+        $reflection->_add('banana');
+        $reflection->_add('orange');
 
-        $items = $subject->items();
+        $items = $reflection->_items();
+
         $this->assertEquals(3, count($items), 'The number of items reported by the set is wrong');
         $this->assertTrue(in_array('apple', $items), 'The set does not seem to contain one of the required items');
         $this->assertTrue(in_array('banana', $items), 'The set does not seem to contain one of the required items');
         $this->assertTrue(in_array('orange', $items), 'The set does not seem to contain one of the required items');
         $this->assertFalse(in_array('pear', $items), 'The set seems to contain an extra item');
 
-        $subject->add('pear');
-        $this->assertEquals(4, count($subject->items()), 'The number of items reported by the set is wrong');
-        $this->assertTrue($subject->has('pear'), 'The set does not seem to contain one of the required items');
+        $reflection->_add('pear');
+        $this->assertEquals(4, count($reflection->_items()), 'The number of items reported by the set is wrong');
+        $this->assertTrue($reflection->_has('pear'), 'The set does not seem to contain one of the required items');
     }
 
     /**
@@ -69,16 +71,17 @@ class AbstractSetTest extends \Xpmock\TestCase
     public function testUniqueItemsOnly()
     {
         $subject = $this->createInstance();
+        $reflection = $this->reflect($subject);
 
-        $subject->add('orange');
-        $subject->add('apple');
-        $subject->add('banana');
-        $subject->add('orange');
-        $subject->add('banana');
-        $subject->add('apple');
-        $subject->add('orange');
+        $reflection->_add('orange');
+        $reflection->_add('apple');
+        $reflection->_add('banana');
+        $reflection->_add('orange');
+        $reflection->_add('banana');
+        $reflection->_add('apple');
+        $reflection->_add('orange');
 
-        $items = $subject->items();
+        $items = $reflection->_items();
         $this->assertEquals(3, count($items), 'The number of items reported by the set is wrong');
         $this->assertTrue(in_array('apple', $items), 'The set does not seem to contain one of the required items');
         $this->assertTrue(in_array('banana', $items), 'The set does not seem to contain one of the required items');
@@ -93,19 +96,20 @@ class AbstractSetTest extends \Xpmock\TestCase
     public function testCanRemoveItems()
     {
         $subject = $this->createInstance();
+        $reflection = $this->reflect($subject);
 
-        $subject->add('orange');
-        $subject->add('apple');
-        $subject->add('banana');
+        $reflection->_add('orange');
+        $reflection->_add('apple');
+        $reflection->_add('banana');
 
-        $items = $subject->items();
+        $items = $reflection->_items();
         $this->assertEquals(3, count($items), 'The number of items reported by the set is wrong');
         $this->assertTrue(in_array('banana', $items), 'The set does not seem to contain one of the required items');
         $this->assertTrue(in_array('orange', $items), 'The set does not seem to contain one of the required items');
         $this->assertTrue(in_array('apple', $items), 'The set does not seem to contain one of the required items');
 
-        $subject->remove('apple');
-        $items = $subject->items();
+        $reflection->_remove('apple');
+        $items = $reflection->_items();
         $this->assertEquals(2, count($items), 'The number of items reported by the set is wrong');
         $this->assertFalse(in_array('apple', $items), 'The set seems to contain an extra item');
     }

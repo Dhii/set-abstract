@@ -9,22 +9,8 @@ use Dhii\Collection;
  *
  * @since [*next-version*]
  */
-abstract class AbstractSet extends Collection\AbstractSearchableCollection implements SetInterface
+abstract class AbstractSet extends Collection\AbstractSearchableCollection
 {
-    /**
-     * {@inheritdoc}
-     *
-     * @since [*next-version*]
-     *
-     * @return AbstractSet This instance.
-     */
-    public function add($value)
-    {
-        $this->_add($value);
-
-        return $this;
-    }
-
     /**
      * Low-level item adding.
      *
@@ -42,16 +28,6 @@ abstract class AbstractSet extends Collection\AbstractSearchableCollection imple
     }
 
     /**
-     * {@inheritdoc}
-     *
-     * @since [*next-version*]
-     */
-    public function has($value)
-    {
-        return $this->_has($value);
-    }
-
-    /**
      * Low-level checking for item existance.
      *
      * @since [*next-version*]
@@ -66,16 +42,6 @@ abstract class AbstractSet extends Collection\AbstractSearchableCollection imple
     }
 
     /**
-     * {@inheritdoc}
-     *
-     * @since [*next-version*]
-     */
-    public function items()
-    {
-        return $this->_items();
-    }
-
-    /**
      * Low-level retrieval of all items.
      *
      * @since [*next-version*]
@@ -85,18 +51,6 @@ abstract class AbstractSet extends Collection\AbstractSearchableCollection imple
     protected function _items()
     {
         return $this->getItems();
-    }
-
-    /**
-     * @since [*next-version*]
-     *
-     * @return AbstractSet This instance.
-     */
-    public function remove($value)
-    {
-        $this->_remove($value);
-
-        return $this;
     }
 
     /**
